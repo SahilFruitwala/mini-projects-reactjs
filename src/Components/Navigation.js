@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom";
 import {
     Collapse,
     Navbar,
@@ -23,7 +24,7 @@ function Navigation() {
     return (
         <div>
             <Navbar color="dark" dark expand="md" >
-                <NavbarBrand className="text-white" href="/">Mini Projects</NavbarBrand>
+                <Link to="/"><NavbarBrand className="text-white" href="/">Mini Projects</NavbarBrand></Link>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
@@ -35,11 +36,11 @@ function Navigation() {
                                 Project List
                             </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem>Calculator</DropdownItem>
+                                <Link to="/calculator"><DropdownItem>Calculator</DropdownItem></Link>
                                 <DropdownItem divider />
-                                <DropdownItem>Tic Tac Toe</DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>Option 2</DropdownItem>
+                                <Link to="/calculator"><DropdownItem>Tic Tac Toe</DropdownItem></Link>
+                                {/* <DropdownItem divider />
+                                <DropdownItem>Option 2</DropdownItem> */}
                             </DropdownMenu>
                         </UncontrolledDropdown>
                         <NavItem>
