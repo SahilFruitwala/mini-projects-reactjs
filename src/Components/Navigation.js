@@ -29,7 +29,7 @@ function Navigation() {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink href="/Home" className="text-white" >Home</NavLink>
+                            <Link to="/"><NavLink className="text-white" >Home</NavLink></Link>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret className="text-white" >
@@ -38,13 +38,13 @@ function Navigation() {
                             <DropdownMenu>
                                 <Link to="/calculator"><DropdownItem>Calculator</DropdownItem></Link>
                                 <DropdownItem divider />
-                                <Link to="/calculator"><DropdownItem>Tic Tac Toe</DropdownItem></Link>
+                                <Link to="/tictactoe"><DropdownItem>Tic-Tac-Toe</DropdownItem></Link>
                                 {/* <DropdownItem divider />
                                 <DropdownItem>Option 2</DropdownItem> */}
                             </DropdownMenu>
                         </UncontrolledDropdown>
                         <NavItem>
-                            <NavLink href="/components/" className="text-white" >About</NavLink>
+                            <Link to="/about"><NavLink className="text-white" >About</NavLink></Link>
                         </NavItem>
                     </Nav>
                     {/* <NavbarText>Simple Text</NavbarText> */}
