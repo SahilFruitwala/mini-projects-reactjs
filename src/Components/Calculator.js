@@ -1,32 +1,54 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 const initialState = {
-    numberOne: '',
-    numberTwo: '',
-    flag: false,
-    operation: ''
+
+    // number object initialization
+
+    numberOne: '', // number of 1st text input
+    numberTwo: '', // number of 2nd text input
+    flag: false, // Set to true if any oprator is clicked
+    operation: '' // get data of operation
 }
 
 function Calculator() {
 
-    const inputRef1 = useRef(null)
-    const inputRef2 = useRef(null)
+    const inputRef1 = useRef(null) // ref to 1st input
+    const inputRef2 = useRef(null) // ref to 2nd input
 
-    const [number, setNumber] = useState(initialState)
+    const [number, setNumber] = useState(initialState) // state to change number object
 
     useEffect(() => {
         inputRef2.current.focus()
-    }, [])
+    }, [])  // right now of no use
+
+    const setDigit = (digit) => {  // use to append and insert digit into number object 
+        if (number.flag) {
+            // check if flag is true than set numberTwo of number object
+            setNumber({ ...number, numberTwo: number.numberTwo + digit.trim() })
+        }
+        else {
+            // check if flag is false than set numberTwo of number object
+            if( number.operation !== '' ) {
+                // if operator is empty then assign as new into numberOne of number object
+                setNumber({ ...number, numberOne: digit.trim(), operation: '' })
+            }
+            else {
+                // if operator is not empty then append it into numberOne of number object
+                setNumber({ ...number, numberOne: number.numberOne + digit.trim() })
+            }
+        }
+    }
 
     const operation = (type) => {
+        // Do calculation or assign operator
         if (!number.flag && type !== 'ANS') {
+            // assign all digit to numberOne, empty numberTwo, set flag to true and finally set operator
             setNumber({ numberOne: number.numberOne, numberTwo: '', flag: true, operation: type })
         }
         else if (number.flag && type === 'ANS') {
-            console.log('HERE', number.operation)
+            // assign all digit to numberOne, empty numberTwo, set flag to true and finally set operator
             switch (number.operation) {
                 case 'ADD':
-                    console.log('HERE TOO')
                     setNumber({ numberOne: parseFloat(number.numberOne) + parseFloat(number.numberTwo), numberTwo: '', flag: false })
                     break
                 case 'SUB':
@@ -45,20 +67,6 @@ function Calculator() {
                 default:
                     setNumber(number)
                     break
-            }
-        }
-    }
-
-    const setDigit = (digit) => {
-        if (number.flag) {
-            setNumber({ ...number, numberTwo: number.numberTwo + digit.trim() })
-        }
-        else {
-            if( number.operation !== '' ) {
-                setNumber({ ...number, numberOne: digit.trim(), operation: '' })
-            }
-            else {
-                setNumber({ ...number, numberOne: number.numberOne + digit.trim() })
             }
         }
     }
