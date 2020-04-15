@@ -6,8 +6,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+
 import Navigation from './Components/Navigation';
-import About from './Components/About'
 import Home from './Components/Home'
 import Calculator from './Components/Calculator';
 import TicTacToe from './Components/TicTacToe';
@@ -21,7 +21,6 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/calculator" component={Calculator} />
           <Route path="/tictactoe" component={TicTacToe} />
-          <Route path="/about" component={About} />
         </Switch>
       </div>
     </Router>

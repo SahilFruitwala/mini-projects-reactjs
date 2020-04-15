@@ -43,9 +43,6 @@ function Navigation() {
                                 <DropdownItem>Option 2</DropdownItem> */}
                             </DropdownMenu>
                         </UncontrolledDropdown>
-                        <NavItem>
-                            <Link to="/about"><NavLink className="text-white" >About</NavLink></Link>
-                        </NavItem>
                     </Nav>
                     {/* <NavbarText>Simple Text</NavbarText> */}
                 </Collapse>
