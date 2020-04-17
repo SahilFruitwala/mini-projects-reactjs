@@ -1,12 +1,19 @@
 .customButton {
   height: 150px;
   width: 150px;
+  margin: 0;
+  border: 1px solid #ffc107;
   border-radius: 0px;
-  background-color: #546E7A;
-  color: #FFC107;
+  background-color: #546e7a;
+  color: #ffc107;
   font-size: 5em;
 }
 
-.customButton:hover{
-    background: #607D8B;
+.customButton:hover {
+  background: #607d8b;
+}
+
+.customLabel {
+  font-size: 2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
