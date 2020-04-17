@@ -1,0 +1,12 @@
+.customButton {
+  height: 150px;
+  width: 150px;
+  border-radius: 0px;
+  background-color: #546E7A;
+  color: #FFC107;
+  font-size: 5em;
+}
+
+.customButton:hover{
+    background: #607D8B;
+}

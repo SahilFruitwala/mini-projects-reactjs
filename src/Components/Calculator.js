@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Container, Toast, ToastBody, ToastHeader, Row, Col, Label, InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
+import { Container, Toast, ToastBody, ToastHeader, Row, Col, InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
 // import { ListGroup, ListGroupItem     } from 'reactstrap';
 
 
@@ -85,7 +85,7 @@ function Calculator() {
                 style={{ textAlign: "right" }}
                 disabled />
             <InputGroup>
-                <InputGroupAddon addonType="prepend"><Label></Label></InputGroupAddon>
+                <InputGroupAddon addonType="prepend"></InputGroupAddon>
                 <Input type="text"
                     value={number.flag ? (number.numberTwo === '' ? '0' : number.numberTwo) : (number.numberOne === '' ? '0' : number.numberOne)}
                     ref={inputRef2}
