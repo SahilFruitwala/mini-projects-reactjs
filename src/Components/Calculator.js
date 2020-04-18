@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Container, Toast, ToastBody, ToastHeader, Row, Col, Button, Input } from 'reactstrap';
 // import { ListGroup, ListGroupItem     } from 'reactstrap';
-
+import '../css/calculator.css';
 
 const initialState = {
 
@@ -78,7 +78,7 @@ function Calculator() {
     }
 
     return (
-        <Container className="mt-3 p-3" fluid="sm" style={{ width: "24%", backgroundColor: '#455A64', borderRadius: '5px' }}>
+        <Container className="myContainer mt-3 p-3" fluid="sm">
             <Input type="text"
                 value={number.flag ? number.numberOne : '0'}
                 ref={inputRef1}

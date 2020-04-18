@@ -1,3 +1,5 @@
-.Container {
-  width: "450px";
+.myContainer {
+  width: 24%;
+  background-color: #455a64;
+  border-radius: 5px;
 }
