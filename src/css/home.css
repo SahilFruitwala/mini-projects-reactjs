@@ -1,0 +1,33 @@
+.firstDiv {
+    height: 22.9rem;
+    background-image: linear-gradient(to bottom right, rgb(17, 150, 246, 1), rgb(40, 136, 206, 0.5));
+}
+
+.firstDiv img {
+    margin-top: 3.5rem;
+    margin-left: 10rem;
+}
+
+.customText1 {
+    color: aliceblue;
+    margin-top: 7rem;
+    margin-left: 5rem; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.secondDiv {
+    height: 22.9rem;
+    background-image: linear-gradient(to bottom left, rgb(17, 150, 246, 1), rgb(40, 136, 206, 0.5));
+}
+
+.secondDiv img {
+    margin-top: 3.5rem;
+    margin-right: 10rem;
+}
+
+.customText2 {
+    color: aliceblue;
+    margin-top: 7rem;
+    margin-right: 5rem; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

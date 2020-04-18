@@ -181,10 +181,16 @@ function TicTacToe() {
         }
     }
 
-    const resetGame = () => {
-        toggle()
-        setstate(initialArray)
-        setTurn('Player-1')
+    const resetGame = (resetFlag) => {
+        if (resetFlag === 1) {
+            toggle()
+            setstate(initialArray)
+            setTurn('Player-1')
+        }
+        else {
+            setstate(initialArray)
+            setTurn('Player-1')
+        }
     }
 
     return (
@@ -205,13 +211,14 @@ function TicTacToe() {
                 <button className="customButton" onClick={() => setIcon(7)}>{state[7]}</button>
                 <button className="customButton" onClick={() => setIcon(8)}>{state[8]}</button>
             </Row>
+            <Button className="mt-3" color="info" onClick={() => { resetGame(0) }}>Restart</Button>
             <Modal isOpen={modal} toggle={toggle} backdrop={'static'}>
                 <ModalHeader>Winner</ModalHeader>
                 <ModalBody>
                     {winnerData}
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={resetGame}>Restart</Button>
+                    <Button color="primary" onClick={() => { resetGame(1) }}>Restart</Button>
                 </ModalFooter>
             </Modal>
         </Container>
