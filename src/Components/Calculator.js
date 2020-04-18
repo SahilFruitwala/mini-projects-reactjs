@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Container, Toast, ToastBody, ToastHeader, Row, Col, InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
+import { Container, Toast, ToastBody, ToastHeader, Row, Col, Button, Input } from 'reactstrap';
 // import { ListGroup, ListGroupItem     } from 'reactstrap';
 
 
@@ -78,20 +78,17 @@ function Calculator() {
     }
 
     return (
-        <Container className="themed-container mt-3" fluid="sm" style={{ width: "24%" }}>
+        <Container className="mt-3 p-3" fluid="sm" style={{ width: "24%", backgroundColor: '#455A64', borderRadius: '5px' }}>
             <Input type="text"
                 value={number.flag ? number.numberOne : '0'}
                 ref={inputRef1}
                 style={{ textAlign: "right" }}
                 disabled />
-            <InputGroup>
-                <InputGroupAddon addonType="prepend"></InputGroupAddon>
-                <Input type="text"
-                    value={number.flag ? (number.numberTwo === '' ? '0' : number.numberTwo) : (number.numberOne === '' ? '0' : number.numberOne)}
-                    ref={inputRef2}
-                    style={{ textAlign: "right" }}
-                    disabled />
-            </InputGroup>
+            <Input type="text"
+                value={number.flag ? (number.numberTwo === '' ? '0' : number.numberTwo) : (number.numberOne === '' ? '0' : number.numberOne)}
+                ref={inputRef2}
+                style={{ textAlign: "right" }}
+                disabled />
 
             <Toast isOpen={show}>
                 <ToastHeader icon="danger" toggle={toggle}> Error </ToastHeader>

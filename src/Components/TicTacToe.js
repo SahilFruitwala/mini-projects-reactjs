@@ -15,9 +15,7 @@ function TicTacToe() {
 
     useEffect(() => {
         console.log('IN EFFECt')
-        if (myCounter(state)) {
-            winner(state)
-        }
+        myCounter(state) && winner(state)
     }, [state])
 
     function myCounter(tempArray) {
